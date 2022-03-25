@@ -7,7 +7,7 @@ const deps = require("./package.json").dependencies;
 module.exports = {
   entry: "./src/index.js",
   output: {
-    publicPath: "http://localhost:3005/",
+    publicPath: "https://mainapp-production.vercel.app/",
   },
 
   resolve: {
@@ -44,8 +44,8 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-        use:['url-loader?limit=100000'],
-      }
+        use: ["url-loader?limit=100000"],
+      },
     ],
   },
 
@@ -54,7 +54,7 @@ module.exports = {
       name: "mainapp",
       filename: "remoteEntry.js",
       remotes: {
-        mainapp: "mainapp@http://localhost:3005/remoteEntry.js",
+        mainapp: "mainapp@https://mainapp-production.vercel.app/remoteEntry.js",
       },
       exposes: {
         "./CardTable": "./src/components/CardTable.js",
