@@ -29,7 +29,7 @@ const post = (api) => (data, token) => {
   });
 };
 
-const get = (api) => (token) => {
+const get = (api) => () => {
   return axios(
     `${fullURL(api)}`,
     {
