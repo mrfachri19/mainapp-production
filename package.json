@@ -1,0 +1,57 @@
+{
+  "name": "mainapp",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --mode development",
+    "build:start": "cd dist && PORT=3000 npx serve",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "start:live": "webpack serve --open --mode development --live-reload --hot"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jack Herrington",
+    "email": "jherr@pobox.com"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "2.9.1",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.3.2",
+    "postcss": "^8.4.8",
+    "postcss-loader": "^4.1.0",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.23",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "@reduxjs/toolkit": "^1.8.0",
+    "@sentry/react": "^6.18.2",
+    "@sentry/tracing": "^6.18.2",
+    "axios": "^0.26.1",
+    "dotenv-webpack": "^7.1.0",
+    "file-loader": "^6.2.0",
+    "firebase": "^9.6.8",
+    "jquery": "^3.6.0",
+    "js-cookie": "^3.0.1",
+    "jwt-decode": "^3.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.3.0",
+    "redux": "^4.1.2",
+    "url-loader": "^4.1.1",
+    "workbox-window": "^6.5.1"
+  }
+}
