@@ -37,7 +37,7 @@ const get = (api) => () => {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-type": "application/json",
-        Authorization: "Basic dXNlckRpYXJpdW06ZGlhcml1bVVzZXIjMTIz",
+        Authorization: "Basic dXNyQ29uc3VtZTpjb25zdW1lKiphcGkxMjM=",
         // 'apikey': process.env.REACT_APP_API_KEY
       },
     },
@@ -93,7 +93,7 @@ export const postLoginAuth = post(
   "gateway/telkom-diarium-auth/1.0/authService/oauth/token"
 );
 export const getJsonWebToken = get(
-  "rest/pub/apigateway/jwt/getJsonWebToken?app_id=89eb6850-652d-40fd-8c51-9a8073f82426"
+  "rest/pub/apigateway/jwt/getJsonWebToken?app_id=cddc614d-9edb-430b-a1d9-783adc2a42c2"
 );
 
 const API = {

@@ -19,13 +19,30 @@ export default function Login() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
   const [message, setMessage] = useState("");
   const history = useHistory();
 
-  const getToken = async (e) => {
+  const token = "dXNlckRpYXJpdW06ZGlhcml1bVVzZXIjMTIz";
+  const apiUrl = "https://apigwsit.telkom.co.id:7777";
+
+  axios.interceptors.request.use(
+    (config) => {
+      config.headers.authorization = `Basic ${token}`;
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
+
+  const getToken = async () => {
     try {
-      const response = await getJsonWebToken();
+      const response = await axios.get(
+        "https://apigwsit.telkom.co.id:7777/rest/pub/apigateway/jwt/getJsonWebToken?app_id=89eb6850-652d-40fd-8c51-9a8073f82426",
+        {
+          crossDomain: true,
+        }
+      );
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -33,8 +50,12 @@ export default function Login() {
   };
 
   useEffect(() => {
-    dispatch({ type: "set", isValidCaptcha: false });
-  }, [1]);
+    getToken();
+  }, []);
+
+  // useEffect(() => {
+  //   dispatch({ type: "set", isValidCaptcha: false });
+  // }, [1]);
 
   // const Login = async (e) => {
   //   e.preventDefault();
@@ -68,10 +89,6 @@ export default function Login() {
   //       console.log(error);
   //     });
   // };
-
-  useEffect(() => {
-    getToken();
-  }, []);
 
   return (
     <>
